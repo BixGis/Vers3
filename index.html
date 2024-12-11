@@ -86,14 +86,29 @@
                   <li>El encebollado</li>
                 </ul> 
                 <hr>
+                <div class="row">
+                  <div class="col-md-4" id="color1">
+                    <p>Div de prueba1</p>
+                    
+
+                  </div>
+                  <div class="col-md-4" id="color2">
+                    <p>Div de prueba2</p>
+
+                  </div>
+                </div>
+                <button class="btn btn-primary"onclick="cambiarcolor('color1','green')">Cambiar de color 1</button>
+                <button class="btn btn-danger"onclick="cambiarcolor('color2', 'red')">Cambiar de color 2</button>
                 <div class=" card-footer text-center"> 
                   <h4>Mi cancion favorita</h4>  
-                  <a class="btn btn-danger" href="https://www.youtube.com/watch?v=KLgQKiUk7ms" target="_blank" class="boton-youtube">
+                  <a class="btn btn-danger"onclick="showMessage()" href="https://www.youtube.com/watch?v=KLgQKiUk7ms" target="_blank" class="boton-youtube">
                     Video en Youtube 
                   </a>
                   <hr>
-                  <a class="btn btn-primary" href="https://bixgis.github.io/Yo-ese/" role="button">Regresar</a>
-                  </div>
+                  <a class="btn btn-primary"  href="https://bixgis.github.io/Yo-ese/" role="button">Regresar</a>
+                  <button class ="btn btn-primary" onclick="CambiarContenido()" >Cambiar Contenido</button>  
+                </div>
+
 
                 </div>
             </main>
@@ -103,7 +118,20 @@
               <p> Todos los derechos reservados 2024</p>
               <header>
                 </footer>
-    
+              <script>
+                function showMessage(){
+                  alert("Has presionado el boton regrsar");
+                }
+                function CambiarContenido(){
+                  const texto = document.querySelector('.card-text');// sirve para atrapar elemetos por su clase
+                  texto.textContent = "Este es el nuevo contenido generado desde JS";
+                }
+                function cambiarcolor(idElemento, COLOR, ){
+                  const d = document.getElementById(idElemento);
+                  d.style.backgroundColor=COLOR
+                }
+
+              </script>  
   </body>
 
 </html>
